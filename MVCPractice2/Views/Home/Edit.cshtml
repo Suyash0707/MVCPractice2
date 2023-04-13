@@ -1,0 +1,70 @@
+﻿@model MVCPractice2.Model.Member
+
+
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://getwallpapers.com/wallpaper/full/9/7/9/200446.jpg");
+			background-size: cover;
+		}
+
+		#form {
+			border-style: double;
+			border-block-color: goldenrod;
+			border-radius: 20px;
+			width: 400px;
+			padding: 10px;
+			margin-right: 700px;
+			margin-top: 50px;
+			padding: 10px 10px 10px 100px;
+		
+		}
+		#form2{
+			color:white;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="form">
+		<h2 style="color:gold"><u>Edit Details</u></h2>
+		<form asp-controller="Home" asp-action="Edit" method="post">
+
+			<div id="form2">Name:<br>
+			<input type="text" asp-for="Name" placeholder="Name"><br><br>
+
+			Gender:<br>
+			<select id="gender" asp-for="Gender" placeholder="Select Gender">
+				<option value="choose">---Select Your Gender---</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select> <br><br>
+
+			Age:<br>
+			<input type="text" asp-for="Age" placeholder="Age"><br><br>
+
+			Mobile.No:<br>
+			<input type="text" asp-for="Mobile" placeholder="Mobile.No"><br><br>
+
+			Joining Date:<br>
+			<input type="datetime-local" asp-for="JoiningDate" placeholder="Joining Date"><br><br>
+
+			Duration:<br>
+			<select id="Duration" asp-for="Duration" placeholder="Select Duration">
+				<option value="Choose">---Please Select Duration---</option>
+				<option value="1 Month">1 Month</option>
+				<option value="3 Months">3 Months</option>
+				<option value="6 Months">6 Months</option>
+				<option value="1 Year">1 Year</option>
+			</select><br><br></div>
+
+			<input type="submit" value="Save Changes" class="btn btn-primary">
+			<input type="reset" value="Cancel" class="btn btn-primary">
+		</form>
+	</div>
+</body>
+</html>
+

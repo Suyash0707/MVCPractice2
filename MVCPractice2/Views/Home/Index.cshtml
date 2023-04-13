@@ -1,0 +1,45 @@
+﻿@model List<MVCPractice2.Model.Member>
+
+<html>
+
+<head>
+    <h1>Members</h1>
+    <style>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" > </script ></style>
+</head>
+<body>
+    <table class="table table-Primary">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Mobile.No</th>
+                <th>Joining Date</th>
+                <th>Duration</th>
+                <th>Edit Details</th>
+                <th>Delete Member</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model)
+            {
+                <tr>
+                    <td>@member.Id</td>
+                    <td>@member.Name</td>
+                    <td>@member.Gender</td>
+                    <td>@member.Age</td>
+                    <td>@member.Mobile</td>
+                    <td>@member.JoiningDate</td>
+                    <td>@member.Duration</td>
+                    <td><a href="Home/Edit/@member.Id">Edit</a></td>
+                    <td><a href="Home/Delete/@member.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="Home\Create\" class="btn btn-primary">Add Member</a>
+    <br>
+</body>
+</html>
